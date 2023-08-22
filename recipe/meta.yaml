@@ -23,7 +23,7 @@ requirements:
     - python >=3.9
     - coastsat-package >=0.1.13
     - area
-    - doodleverse-utils >=0.0.33
+    - doodleverse-utils >=0.0.35
     - ipyfilechooser >=0.6.0
     - tqdm
     - leafmap >=0.14.0
