@@ -12,7 +12,7 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -21,20 +21,21 @@ requirements:
     - pip
   run:
     - python >=3.9
-    - coastsat-package >=0.1.13
-    - area
-    - doodleverse-utils >=0.0.35
-    - ipyfilechooser >=0.6.0
-    - tqdm
-    - leafmap >=0.14.0
-    - geojson
     - aiohttp
+    - area
+    - chardet
+    - coastsat-package >=0.1.13
+    - dask-core
+    - doodleverse-utils >=0.0.35
+    - geojson
+    - geopandas
+    - ipyfilechooser >=0.6.0
+    - ipywidgets >=8.0.6
+    - leafmap >=0.14.0
     - nest-asyncio
     - tensorflow
-    - dask-core
-    - ipywidgets >=8.0.6
+    - tqdm
     - transformers
-    - chardet
 
 test:
   imports:
