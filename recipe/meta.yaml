@@ -1,5 +1,5 @@
 {% set name = "CoastSeg" %}
-{% set version = "1.1.14" %}
+{% set version = "1.1.15" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/coastseg-{{ version }}.tar.gz
-  sha256: 4fedfa428ade4b5bb8756a51c8079a93180c9b1a8bd0cde9e8f26281438c3628
+  sha256: 051ceb0de3b7b3a2b24d050351a05cd1add6c0d0c3aa45625e1b990a641b04a9
 
 build:
   noarch: python
@@ -26,7 +26,7 @@ requirements:
     - aiohttp
     - area
     - chardet
-    - coastsat-package >=0.1.26
+    - coastsat-package >=0.1.27
     - dask-core
     - doodleverse-utils >=0.0.35
     - geojson
