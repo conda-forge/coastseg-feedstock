@@ -1,5 +1,5 @@
 {% set name = "CoastSeg" %}
-{% set version = "1.1.30" %}
+{% set version = "1.1.31" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/coastseg-{{ version }}.tar.gz
-  sha256: 66e68f878fba8e6d312c77fcb995ef1486e53f77565e4116256c9651d7e93793
+  sha256: 634484a1c0e7ddd15c4fe9b61af4d5521ff09618441a50361e147961b87036ca
 
 build:
   noarch: python
