@@ -1,5 +1,5 @@
 {% set name = "CoastSeg" %}
-{% set version = "1.1.31" %}
+{% set version = "1.1.33" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/coastseg-{{ version }}.tar.gz
-  sha256: 634484a1c0e7ddd15c4fe9b61af4d5521ff09618441a50361e147961b87036ca
+  sha256: ce98f919b9d5512e5f0e62e98a2d6b35df09f259bab70d9d4a2bba93dfc96e54
 
 build:
   noarch: python
@@ -20,6 +20,7 @@ requirements:
     - setuptools >=61.0
     - pip
   run:
+    - earthengine-api >=0.1.388
     - pytmd
     - xarray
     - python >=3.9
