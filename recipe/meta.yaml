@@ -16,11 +16,11 @@ build:
 
 requirements:
   host:
-    - python >=3.9
+    - python >=3.10
     - setuptools >=61.0
     - pip
   run:
-    - python >=3.9
+    - python >=3.10
     - earthengine-api >=0.1.388
     - coastsat-package >=0.1.43
     - geopandas
