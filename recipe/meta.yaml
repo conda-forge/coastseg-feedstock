@@ -12,7 +12,7 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -33,7 +33,6 @@ requirements:
     - geojson
     - aiohttp
     - nest-asyncio
-    - tensorflow
     - dask-core
     - ipywidgets >=8.0.6
     - transformers
