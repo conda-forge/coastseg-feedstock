@@ -1,5 +1,5 @@
 {% set name = "CoastSeg" %}
-{% set version = "1.1.40" %}
+{% set version = "1.1.42" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/coastseg-{{ version }}.tar.gz
-  sha256: 89b3190347f646e6d0f76f55ccc659f2219a68409497329a7775d8b3bc708e1b
+  sha256: 9d4ebde5a355dc70951993cd768c7a0243370e2e3626d4d072ec17930827d8dd
 
 build:
   noarch: python
@@ -21,10 +21,13 @@ requirements:
     - pip
   run:
     - python >=3.10
+    - gdal >=3.8.4
+    - h5py >=3.10.0
+    - pytmd
+    - coastsat-package >=0.1.43
     - area
     - aiohttp
     - chardet
-    - coastsat-package >=0.1.43
     - dask-core
     - doodleverse-utils >=0.0.35
     - earthengine-api >=0.1.388
@@ -33,9 +36,7 @@ requirements:
     - jupyterlab >=3.0.0
     - leafmap >=0.14.0
     - nest-asyncio
-    - pytmd
     - xarray
-    - h5py >=3.10.0
 
 test:
   imports:
