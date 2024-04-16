@@ -12,7 +12,7 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -48,8 +48,7 @@ test:
     - pip
 
 about:
-  home: https://github.com/Doodleverse/CoastSeg
-  summary: An interactive jupyter notebook for downloading satellite imagery
+  summary: An interactive python package for satellite derived shoreline workflows
   license: MIT
   license_file: LICENSE
 
