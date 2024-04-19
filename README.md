@@ -3,11 +3,15 @@ About coastseg-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/coastseg-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/Doodleverse/CoastSeg
+Home: https://github.com/SatelliteShorelines/CoastSeg
 
 Package license: MIT
 
-Summary: An interactive jupyter notebook for downloading satellite imagery
+Summary: An interactive python package for satellite derived shoreline workflows
+
+Development: https://github.com/SatelliteShorelines/CoastSeg
+
+Documentation: https://satelliteshorelines.github.io/CoastSeg/
 
 Current build status
 ====================
