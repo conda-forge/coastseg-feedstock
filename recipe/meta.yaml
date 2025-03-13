@@ -12,7 +12,7 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -26,7 +26,7 @@ requirements:
     - python >={{ python_min }}
     - gdal >=3.8.4
     - h5py
-    - pytmd <=2.2.2
+    - pytmd <2.2.0
     - coastsat-package >=0.1.75
     - pooch
     - area
