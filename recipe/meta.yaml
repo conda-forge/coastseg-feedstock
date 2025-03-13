@@ -26,7 +26,7 @@ requirements:
     - python >={{ python_min }}
     - gdal >=3.8.4
     - h5py
-    - pytmd ==2.1.9
+    - pytmd<=2.2.2
     - coastsat-package >=0.1.75
     - pooch
     - area
