@@ -1,5 +1,5 @@
 {% set name = "CoastSeg" %}
-{% set version = "1.4.3" %}
+{% set version = "1.4.4" %}
 {% set python_min = "3.10" %}
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/coastseg-{{ version }}.tar.gz
-  sha256: 16d64c399ca021552efd2b1481222a7a05a046d1fdb137b9fbd6e84b0bda668a
+  sha256: 1d898c14f20b6f8879e8fc0677ed1db2c33a74107095982c36c96ee5c44fd0e5
 
 build:
   noarch: python
@@ -20,11 +20,14 @@ requirements:
     - setuptools >=61.0
     - pip
   run:
+    - netcdf4
+    - numpy ==1.23.5
+    - protobuf ==3.20.3
     - python >={{ python_min }}
     - gdal >=3.8.4
-    - h5py >=3.10.0
-    - pytmd <=2.1.9
-    - coastsat-package >=0.1.74
+    - h5py
+    - pytmd ==2.1.9
+    - coastsat-package >=0.1.75
     - pooch
     - area
     - aiohttp
@@ -35,7 +38,7 @@ requirements:
     - geojson
     - geopandas
     - jupyterlab >=3.0.0
-    - leafmap >=0.14.0
+    - leafmap ==0.35
     - nest-asyncio
     - xarray
 
