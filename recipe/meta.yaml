@@ -1,5 +1,5 @@
 {% set name = "CoastSeg" %}
-{% set version = "1.4.5" %}
+{% set version = "1.5.1" %}
 {% set python_min = "3.10" %}
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/coastseg-{{ version }}.tar.gz
-  sha256: 0e9b4e55bb374d1af13d2163d34245b610db574bd9e26f9d68a9f04a429c856e
+  sha256: 6bd1831aa5b39192cf2caf7b4aca0344a43ce5095080b8dbbddf38bd3009207f
 
 build:
   noarch: python
@@ -27,7 +27,7 @@ requirements:
     - gdal >=3.8.4
     - h5py
     - pytmd <2.2.0
-    - coastsat-package >=0.1.75
+    - coastsat-package >=0.2.0,<0.3
     - pooch
     - area
     - aiohttp
