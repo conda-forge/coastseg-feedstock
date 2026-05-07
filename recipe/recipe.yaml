@@ -12,17 +12,17 @@ source:
   sha256: 1dcbdfc6760761b5a5960848e1a3aa69f20143fcb522746db7ebdd315fb9fb3b
 
 build:
-  number: 1
+  number: 2
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
-    - python ${{ python_min }}.*,<3.13
+    - python >=${{ python_min }},<3.13
     - hatchling
     - pip
   run:
-    - python ${{ python_min }}.*,<3.13
+    - python >=${{ python_min }},<3.13
     - aiohttp
     - onnxruntime
     - chardet
