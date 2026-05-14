@@ -30,6 +30,7 @@ requirements:
     - dask-core
     - coastsat-package >=0.3.3
     - geojson
+    - geopandas-base
     - h5py
     - jupyterlab >=3.0.0
     - leafmap
@@ -40,7 +41,11 @@ requirements:
     - xarray
     - pytz
     - netcdf4
-    - geopandas
+    # These are not in the package metadata.
+    # Some are listed as pixi dependencies in pyproject.toml.
+    - gdal >=3.8.4
+    - area
+    - earthengine-api >=0.1.388
 tests:
   - python:
       imports:
