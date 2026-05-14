@@ -1,8 +1,8 @@
 schema_version: 1
 
 context:
-  version: "2.0.2"
-  python_min: "3.10"
+  version: 2.0.3
+  python_min: '3.10'
 
 package:
   name: coastseg
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/C/CoastSeg/coastseg-${{ version }}.tar.gz
-  sha256: 1dcbdfc6760761b5a5960848e1a3aa69f20143fcb522746db7ebdd315fb9fb3b
+  sha256: f307547bfa9b4a16cdabdf3aff59951a0f0644fe6815e3c4803651d941f7672b
 
 build:
-  number: 2
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
@@ -30,7 +30,6 @@ requirements:
     - dask-core
     - coastsat-package >=0.3.3
     - geojson
-    - geopandas-base
     - h5py
     - jupyterlab >=3.0.0
     - leafmap
@@ -41,12 +40,7 @@ requirements:
     - xarray
     - pytz
     - netcdf4
-    # These are not in the package metadata.
-    # Some are listed as pixi dependencies in pyproject.toml.
-    - gdal >=3.8.4
-    - area
-    - earthengine-api >=0.1.388
-
+    - geopandas
 tests:
   - python:
       imports:
@@ -55,7 +49,7 @@ tests:
       pip_check: false
       python_version:
         - ${{ python_min }}.*
-        - "*"
+        - '*'
 
 about:
   homepage: https://github.com/SatelliteShorelines/CoastSeg
