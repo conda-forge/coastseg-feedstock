@@ -12,7 +12,7 @@ source:
   sha256: 1d078cafc5b3dbb3145a1fa44f5b3beb4c2b1332be5632babe4edc63d88cb536
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
@@ -23,6 +23,11 @@ requirements:
     - pip
   run:
     - python >=${{ python_min }},<3.13
+    - gdal
+    # temporary pin needed because leafmap relies on ipyvuetify, but since conda-forge's ipyvuetify 3.0.0 build still pins ipyvue <2,
+    # but it needs ipyvue >=3, this causes the Python metadata to be inconsistent (pip check fails). Remove this ceiling once 
+    # conda-forge/ipyvuetify-feedstock fixes its ipyvue
+    - ipyvuetify <3
     - aiohttp
     - onnxruntime
     - chardet
@@ -45,8 +50,10 @@ tests:
   - python:
       imports:
         - coastseg
-      # bogus requirement on versioneer in doodleverse_utils
-      pip_check: false
+        - coastseg.extracted_shoreline
+        - coastseg.zoo_model
+        - coastseg.common
+      pip_check: true
       python_version:
         - ${{ python_min }}.*
         - '*'
