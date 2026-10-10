@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: 2.1.1
+  version: 2.1.2
 
 package:
   name: coastseg
@@ -9,10 +9,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/C/CoastSeg/coastseg-${{ version }}.tar.gz
-  sha256: 1d078cafc5b3dbb3145a1fa44f5b3beb4c2b1332be5632babe4edc63d88cb536
+  sha256: 184c3f17839ce992d097eca89f108b8e8805e1335890b3a978ac9922c2100c48
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
@@ -23,16 +23,11 @@ requirements:
     - pip
   run:
     - python >=${{ python_min }},<3.13
-    - gdal
-    # temporary pin needed because leafmap relies on ipyvuetify, but since conda-forge's ipyvuetify 3.0.0 build still pins ipyvue <2,
-    # but it needs ipyvue >=3, this causes the Python metadata to be inconsistent (pip check fails). Remove this ceiling once 
-    # conda-forge/ipyvuetify-feedstock fixes its ipyvue
-    - ipyvuetify <3
     - aiohttp
     - onnxruntime
     - chardet
     - dask-core
-    - coastsat-package >=0.5.0
+    - coastsat-package >=0.5.1
     - geojson
     - h5py
     - jupyterlab >=3.0.0
